@@ -1,0 +1,10 @@
+services:
+  netscope:
+    build: .
+    ports:
+      - "${PORT:-8000}:10000"
+    environment:
+      PORT: "10000"
+      NETSCOPE_MAX_UPLOAD_BYTES: "12582912"
+      NETSCOPE_MAX_PACKETS: "30000"
+    restart: unless-stopped
